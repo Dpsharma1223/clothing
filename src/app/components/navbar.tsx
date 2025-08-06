@@ -8,12 +8,15 @@ import { Instagram } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import { FaPinterest } from "react-icons/fa";
 import { Search, Heart, User, ShoppingBag } from "lucide-react";
 import Shop from "./shop";
+import SearchBar from "./searchBar";
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -25,7 +28,7 @@ export default function NavBar() {
     <>
       {/* Top Bar */}
       {!isScrolled && (
-        <div className="hidden lg:flex justify-between items-center bg-black text-white text-sm px-6 py-2">
+        <div className="hidden lg:flex justify-between items-center bg-black/95 text-white text-sm px-6 py-2">
           <div className="flex gap-6 items-center">
             <Link href="/">
               <FaFacebookF className="w-3.5 h-3.5 text-white" />
@@ -38,6 +41,9 @@ export default function NavBar() {
             </Link>
             <Link href="/">
               <FaYoutube className="w-3.5 h-3.5 text-white" />
+            </Link>
+            <Link href="/">
+              <FaPinterest  className="w-3.5 h-3.5 text-white" />
             </Link>
           </div>
           <div className="text-sm">
@@ -54,10 +60,10 @@ export default function NavBar() {
 
       {/* Navbar */}
       <nav
-        className={`w-full z-50 sticky top-0 transition-all duration-300 ${
+        className={`w-full z-50 fixed transition-all duration-300 ${
           isScrolled
-            ? "bg-white shadow text-black"
-            : "lg:bg-black/25 lg:backdrop-blur-sm lg:text-white bg-white"
+            ? "bg-white shadow top-0 text-black"
+            : "lg:bg-white/10 lg:top-9 lg:text-white bg-white"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,7 +224,9 @@ export default function NavBar() {
             </div>
 
             <div className="flex items-center space-x-4 ml-4">
-              <Search className="w-6 h-6" />
+              <button onClick={() => setSearchOpen(true)} aria-label="Search">
+                <Search className="w-5 h-5" />
+              </button>
               <User className="w-6 h-6 hidden lg:inline" />
               <Heart className="w-6 h-6  hidden lg:inline" />
               <ShoppingBag className="w-6 h-6" />
@@ -229,6 +237,9 @@ export default function NavBar() {
 
       {/* Mobile Drawer */}
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      {/* Search Modal */}
+      <SearchBar searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
     </>
   );
 }

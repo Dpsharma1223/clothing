@@ -6,4 +6,17 @@
   --color-dark-grey: #555555;
   --color-menu: #d0473e;
   --color-light-grey: #e5e5e5;
+  --color-md-grey: #999999;
+  --color-border: #333333;
+  --color-tag: #177983;
+
+  --text-md:0.9rem;
+
+
+  --breakpoint-xs:500px;
+}
+
+.font-outline {
+  -webkit-text-stroke: 1px black;
+  color: transparent;
 }

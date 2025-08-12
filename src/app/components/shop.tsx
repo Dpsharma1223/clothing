@@ -50,7 +50,7 @@ export default function Shop() {
 
   return (
     <div className="relative group">
-      <Link href="/shop" className="hover:underline-offset-5 hover:underline font-semibold py-7 px-4 inline-flex items-center">
+      <Link href="/shopPage" className="hover:underline-offset-5 hover:underline font-semibold py-7 px-4 inline-flex items-center">
         Shop
         <svg
           className="w-4 h-4 ml-1 mt-[1px]"

@@ -99,7 +99,7 @@ export default function NavBar() {
               </Link>
               <Shop />
               <Link
-                href="/"
+                href="/about"
                 className="hover:underline hover:underline-offset-5 font-semibold py-7 px-4"
               >
                 About
@@ -156,6 +156,13 @@ export default function NavBar() {
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     Brands
+                  </Link>
+
+                  <Link
+                    href="/product"
+                    className="hover:translate-x-3 hover:transition-transform duration-500"
+                  >
+                    Product Page
                   </Link>
 
                   <Link

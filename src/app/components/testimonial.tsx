@@ -72,7 +72,7 @@ export default function Testimonials() {
 
 
   return (
-    <div className="pt-6 xs:pt-9 md:pt-22 bg-white px-4">
+    <div className="pt-6 xs:pt-9 md:pt-22 px-4 bg-white">
       <div className="2xl:container 2xl:mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-semibold">Customer Say!</h2>

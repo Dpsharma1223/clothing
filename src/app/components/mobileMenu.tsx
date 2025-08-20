@@ -71,15 +71,8 @@ export default function MobileMenu({
           <span className="text-sm font-medium">Wishlist</span>
         </div>
 
-        {/* Language Switcher */}
-        <div className="mx-5 pt-6 pb-10">
-          <p className="font-semibold mb-3">Language</p>
-          <div className="flex space-x-4 text-sm">
-            <span className="underline">English</span>
-            <span className="text-gray-500">日本語</span>
-            <span className="text-gray-500">Français</span>
-          </div>
-        </div>
+        
+    
       </div>
     </div>
   );

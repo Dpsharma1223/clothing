@@ -12,11 +12,15 @@ import { FaPinterest } from "react-icons/fa";
 import { Search, Heart, User, ShoppingBag } from "lucide-react";
 import Shop from "./shop";
 import SearchBar from "./searchBar";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -43,7 +47,7 @@ export default function NavBar() {
               <FaYoutube className="w-3.5 h-3.5 text-white" />
             </Link>
             <Link href="/">
-              <FaPinterest  className="w-3.5 h-3.5 text-white" />
+              <FaPinterest className="w-3.5 h-3.5 text-white" />
             </Link>
           </div>
           <div className="text-sm">
@@ -60,11 +64,16 @@ export default function NavBar() {
 
       {/* Navbar */}
       <nav
-        className={`w-full z-50 fixed transition-all duration-300 ${
-          isScrolled
-            ? "bg-white shadow top-0 text-black"
-            : "lg:bg-white/10 lg:top-9 lg:text-white bg-white"
-        }`}
+        className={`w-full z-50 transition-all duration-300
+    ${
+      isHome
+        ? isScrolled
+          ? "fixed bg-white shadow top-0 text-black"
+          : "lg:bg-white/10 lg:top-9 lg:text-white bg-white fixed"
+        : isScrolled
+        ? "fixed bg-white shadow top-0 text-black"
+        : "relative bg-white text-black"
+    }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
@@ -93,19 +102,19 @@ export default function NavBar() {
             <div className="hidden lg:flex items-center">
               <Link
                 href="/"
-                className="hover:underline hover:underline-offset-5 font-semibold py-7 px-4"
+                className="hover:underline hover:underline-offset-5 font-medium py-7 px-4"
               >
                 Home
               </Link>
               <Shop />
               <Link
                 href="/about"
-                className="hover:underline hover:underline-offset-5 font-semibold py-7 px-4"
+                className="hover:underline hover:underline-offset-5 font-medium py-7 px-4"
               >
                 About
               </Link>
               <div className="relative group">
-                <button className="hover:underline-offset-5 hover:underline font-semibold py-7 px-4 inline-flex items-center">
+                <button className="hover:underline-offset-5 hover:underline font-medium py-7 px-4 inline-flex items-center">
                   Pages
                   <svg
                     className="w-4 h-4 ml-1 mt-[1px]"
@@ -124,35 +133,35 @@ export default function NavBar() {
 
                 <div className="absolute -left-3 top-full w-64 bg-white shadow-xl z-50 py-7 px-7 hidden group-hover:flex flex-col gap-3 text-sm text-gray-800">
                   <Link
-                    href="/"
+                    href="/ourStore"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     Our Stores
                   </Link>
 
                   <Link
-                    href="/"
+                    href="/localStore"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     Store location
                   </Link>
 
                   <Link
-                    href="/"
+                    href="/career"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     Career
                   </Link>
 
                   <Link
-                    href="/"
+                    href="/sales"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     Sales
                   </Link>
 
                   <Link
-                    href="/"
+                    href="/brands"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     Brands
@@ -166,49 +175,28 @@ export default function NavBar() {
                   </Link>
 
                   <Link
-                    href="/"
-                    className="hover:translate-x-3 hover:transition-transform duration-500"
-                  >
-                    Compare
-                  </Link>
-
-                  <Link
-                    href="/"
-                    className="hover:translate-x-3 hover:transition-transform duration-500"
-                  >
-                    Timeline
-                  </Link>
-
-                  <Link
-                    href="/"
+                    href="/faq"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     FAQ
                   </Link>
 
                   <Link
-                    href="/"
-                    className="hover:translate-x-3 hover:transition-transform duration-500"
-                  >
-                    Recently viewed products
-                  </Link>
-
-                  <Link
-                    href="/"
+                    href="/error"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     404 error
                   </Link>
 
                   <Link
-                    href="/"
+                    href="/myAccount"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     My account
                   </Link>
 
                   <Link
-                    href="/"
+                    href="/portfolio"
                     className="hover:translate-x-3 hover:transition-transform duration-500"
                   >
                     Portfolio
@@ -217,26 +205,42 @@ export default function NavBar() {
               </div>
 
               <Link
-                href="/"
-                className="hover:underline hover:underline-offset-5 font-semibold py-7 px-4"
+                href="/blog"
+                className="hover:underline hover:underline-offset-5 font-medium py-7 px-4"
               >
                 Blogs
               </Link>
               <Link
-                href="/"
-                className="hover:underline hover:underline-offset-5 font-semibold py-7 px-4"
+                href="/contact"
+                className="hover:underline hover:underline-offset-5 font-medium py-7 px-4"
               >
                 Contact
               </Link>
             </div>
 
-            <div className="flex items-center space-x-4 ml-4">
+            <div className="flex items-center py-5 space-x-4 ml-4">
               <button onClick={() => setSearchOpen(true)} aria-label="Search">
                 <Search className="w-5 h-5" />
               </button>
               <User className="w-6 h-6 hidden lg:inline" />
-              <Heart className="w-6 h-6  hidden lg:inline" />
-              <ShoppingBag className="w-6 h-6" />
+              <Link
+                href="/wishlist"
+                className="relative hidden lg:inline-flex items-center pr-2"
+              >
+                <Heart className="w-6 h-6" />
+                <span className="absolute -top-1 -right-1 bg-red text-white text-xs rounded-full px-1.5">
+                  3
+                </span>
+              </Link>
+              <Link
+                href="/cart"
+                className="relative hidden lg:inline-flex items-center pr-2"
+              >
+                <ShoppingBag className="w-6 h-6" />
+                <span className="absolute -top-1 -right-1 bg-red text-white text-xs rounded-full px-1.5">
+                  3
+                </span>
+              </Link>
             </div>
           </div>
         </div>

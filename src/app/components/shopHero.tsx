@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function ShopHero() {
   return (
-    <section className="w-full bg-white pt-20">
+    <section className="w-full bg-white">
       <div className="relative bg-[url(/banners/shopbanner.jpeg)] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/20 z-10" />
 

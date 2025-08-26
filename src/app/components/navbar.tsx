@@ -64,7 +64,7 @@ export default function NavBar() {
 
       {/* Navbar */}
       <nav
-        className={`w-full z-50 transition-all duration-300
+        className={`w-full z-50 transition-all duration-1000
     ${
       isHome
         ? isScrolled
@@ -75,7 +75,7 @@ export default function NavBar() {
         : "relative bg-white text-black"
     }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Hamburger Menu */}
             <div className="lg:hidden flex text-dark-grey items-center">

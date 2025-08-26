@@ -81,7 +81,7 @@ export default function MyAccountPage() {
               and promotions. To opt out, click unsubscribe in our emails.
             </p>
             <Link
-              href="/register"
+              href="/signIn"
               className="block w-full text-center bg-black text-sm text-white rounded-full border border-black py-3.5 font-medium hover:bg-white hover:text-black transition-colors duration-500"
             >
               CREATE ACCOUNT

@@ -1,4 +1,4 @@
-// src/app/career/page.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -14,16 +14,16 @@ type Job = {
 };
 
 const jobs: Job[] = [
-    { title: "E-commerce Manager", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/career" },
-    { title: "Digital Marketing Specialist", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/career" },
-    { title: "SEO Specialist", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/career" },
-    { title: "Instagram Content Executive", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/career" },
-    { title: "Video Editor Executive", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/career" },
-    { title: "Media Leader", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/career" },
-    { title: "UI/UX Designer", location: "Work address", type: "Full-time", income: "$25,000 - $30,000", date: "August 09 2023", link: "/career" },
-    { title: "Frontend Developer", location: "Work address", type: "Full-time", income: "$25,000 - $30,000", date: "August 09 2023", link: "/career" },
-    { title: "Backend Developer", location: "Work address", type: "Full-time", income: "$25,000 - $30,000", date: "August 09 2023", link: "/career" },
-    { title: "HR Specialist", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/career" },
+    { title: "E-commerce Manager", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "Digital Marketing Specialist", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "SEO Specialist", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "Instagram Content Executive", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "Video Editor Executive", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "Media Leader", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "UI/UX Designer", location: "Work address", type: "Full-time", income: "$25,000 - $30,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "Frontend Developer", location: "Work address", type: "Full-time", income: "$25,000 - $30,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "Backend Developer", location: "Work address", type: "Full-time", income: "$25,000 - $30,000", date: "August 09 2023", link: "/careerDetail" },
+    { title: "HR Specialist", location: "Work address", type: "Full-time", income: "$20,000 - $25,000", date: "August 09 2023", link: "/careerDetail" },
   ];
   
 

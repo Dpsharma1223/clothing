@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white px-6 md:px-20 pt-18 pb-23 text-md">
+    <footer className="bg-secondary text-white px-6 md:px-20 pt-18 pb-23 md:pb-10 text-md">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-10 pb-10">
         {/* Column 1 */}
         <div className="col-span-2">
@@ -161,13 +161,8 @@ export default function Footer() {
 
       <div className="border-t border-border mt-10 pt-5 flex flex-col md:flex-row justify-between items-center text-md-grey text-md">
         <p className="mt-3">© 2024 Rokan store. All rights reserved.</p>
-        <div className="flex flex-wrap justify-center items-center gap-2 mt-7 md:mt-0">
-          <img src="/visa.svg" alt="Visa" className="h-6" />
-          <img src="/paypal.svg" alt="PayPal" className="h-6" />
-          <img src="/mastercard.svg" alt="Mastercard" className="h-6" />
-          <img src="/moneybookers.svg" alt="Moneybookers" className="h-6" />
-          <img src="/maestro.svg" alt="Maestro" className="h-6" />
-          <img src="/jcb.svg" alt="JCB" className="h-6" />
+        <div className="flex gap-2 mt-7 md:mt-3 overflow-hidden">
+          <img src="/images/payment.png" alt="Payment Methods" className="w-full h-full object-cover" />
         </div>
       </div>
     </footer>
